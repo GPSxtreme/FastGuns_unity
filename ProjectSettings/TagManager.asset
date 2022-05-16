@@ -8,6 +8,7 @@ TagManager:
   - enemy
   - headShot
   - obstacles
+  - healthPickup
   layers:
   - Default
   - TransparentFX
