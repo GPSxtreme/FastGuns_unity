@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class gunManager : MonoBehaviour
 {
+    public static gunManager instance;
     public GameObject bullet;
     public bool canAutoFire;
     public float fireRate;
@@ -13,6 +14,9 @@ public class gunManager : MonoBehaviour
     public int maxAmmoPerClip = 30;
    
     // Start is called before the first frame update
+    void Awake(){
+        instance = this;
+    }
     void Start()
     {
         currentAmmo = maxAmmoPerClip;
@@ -23,6 +27,14 @@ public class gunManager : MonoBehaviour
     {
         if(fireCounter>0)
         fireCounter -=Time.deltaTime;
+        updateAmmoUi();
+    }
+     public void ammoPickupFull(){
+        currentAmmo = maxAmmoPerClip;
+        updateAmmoUi();
+    }
+    public void updateAmmoUi(){
         uiController.instance.ammoText.text = "AMMO: " + currentAmmo;
     }
+    
 }

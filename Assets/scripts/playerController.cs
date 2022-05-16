@@ -115,7 +115,5 @@ public class playerController : MonoBehaviour
             activeGun.fireCounter = activeGun.fireRate;
         }
         
-    }
-   
-    
+    }  
 }
