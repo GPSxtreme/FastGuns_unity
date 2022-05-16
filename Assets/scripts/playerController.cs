@@ -12,10 +12,8 @@ public class playerController : MonoBehaviour
     public bool invertX , invertY;
     private bool canJump,canDblJump,isSprinting;
     public Animator anim;
-    public GameObject bullet;
     public Transform firePoint;
-    public float fireRate = 0.2F;
-    private float nextFire = 0.0F;
+    public gunManager activeGun;
     
     void Awake (){
         instance =  this ;
@@ -81,8 +79,8 @@ public class playerController : MonoBehaviour
         camTrans.rotation = Quaternion.Euler(camTrans.rotation.eulerAngles + new Vector3( -mouseInput.y,0f,0f));
 
         //handle shooting 
-        if(Input.GetMouseButton(0)&& Time.time > nextFire){
-            nextFire = Time.time + fireRate;
+        //single shot
+        if(Input.GetMouseButtonDown(0) && activeGun.fireCounter <= 0){
             
             RaycastHit hit;
             if(Physics.Raycast(camTrans.position,camTrans.forward,out hit,50f))
@@ -94,12 +92,28 @@ public class playerController : MonoBehaviour
             }else {
                 firePoint.LookAt(camTrans.position + camTrans.forward*30f);
             }
-            
-            Instantiate(bullet,firePoint.position,firePoint.rotation);
+           fireShot();
+        }
+        //multi shot
+        if(Input.GetMouseButton(0)&& activeGun.canAutoFire){
+            if(activeGun.fireCounter <=0 ){
+                fireShot();
+            }
         }
         
         //handle animations
         anim.SetFloat("moveSpeed",moveInput.magnitude);
         anim.SetBool("onGround",canJump);
+        
+        
     }
+    public void fireShot(){
+        if(activeGun.currentAmmo >0)
+        {
+            activeGun.currentAmmo--;
+            Instantiate(activeGun.bullet , firePoint.position , firePoint.rotation);
+            activeGun.fireCounter = activeGun.fireRate;
+        }
+        
+    }  
 }

@@ -9,6 +9,7 @@ TagManager:
   - headShot
   - obstacles
   - healthPickup
+  - ammoPickup
   layers:
   - Default
   - TransparentFX
