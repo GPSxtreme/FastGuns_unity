@@ -23,7 +23,7 @@ public class healthPickup : MonoBehaviour
         mHealth =  playerHealthController.instance.maxHealth;
     }
     private void OnTriggerEnter(Collider other){
-        if(other.gameObject.tag == "Player"){
+        if(other.gameObject.tag == "Player" && cHealth != mHealth){
            if( cHealth < mHealth ){
                 playerHealthController.instance.maxHealPlayer();
             }
