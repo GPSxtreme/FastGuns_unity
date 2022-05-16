@@ -9,6 +9,8 @@ public class uiController : MonoBehaviour
     public static uiController instance;
     public Slider healthSlider;
     public Text healthText;
+    public Text ammoText;
+
     public Animator anim;
     public void Awake(){
         instance = this;
