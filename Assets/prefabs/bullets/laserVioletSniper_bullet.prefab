@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6320362737238355784}
   - component: {fileID: 4283948611860989790}
   m_Layer: 7
-  m_Name: bullet
+  m_Name: laserVioletSniper_bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 551e827a7bf24bf48a7b4caa8bfe53d7, type: 2}
+  - {fileID: 2100000, guid: 70e68b3044ec7c545b457936b5aa9de4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,12 +110,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01569b66065dbcf4990289aafe75dd0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 50
-  lifeTime: 1
+  moveSpeed: 100
+  lifeTime: 5
   rB: {fileID: 6320362737238355784}
-  impactEffect: {fileID: 6168435177448452506, guid: 82e8b408b2bbe2a40bf0842c6aab283e, type: 3}
+  impactEffect: {fileID: 6168435177448452506, guid: 664c251d421e27c428ec4dc18911a934, type: 3}
   impactFxSphere: {fileID: 4170008745850294816, guid: 26a3a681bc5e620429e235b1b378c23c, type: 3}
-  dmgAmount: 1
+  dmgAmount: 10
 --- !u!54 &6320362737238355784
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -152,7 +152,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 551e827a7bf24bf48a7b4caa8bfe53d7, type: 2}
+  - {fileID: 2100000, guid: 70e68b3044ec7c545b457936b5aa9de4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
