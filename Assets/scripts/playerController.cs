@@ -65,7 +65,14 @@ public class playerController : MonoBehaviour
             moveInput.y = jumpPower;
             canDblJump = false;
         }
-        
+        //handle zoom;
+        if(Input.GetMouseButtonDown(1)){
+            cameraController.instance.zoomIn(activeGun.zoomAmount);
+        }
+        if(Input.GetMouseButtonUp(1)){
+            cameraController.instance.zoomOut();
+
+        }
         //append all x,y,z values to the character controller
         charCon.Move(moveInput*Time.deltaTime);
        
@@ -131,5 +138,6 @@ public class playerController : MonoBehaviour
         if(currentGun >= allGuns.Count) currentGun = 0;
         activeGun = allGuns[currentGun];
         activeGun.gameObject.SetActive(true);
+        firePoint.position = activeGun.firePoint.position;
     }
 }
