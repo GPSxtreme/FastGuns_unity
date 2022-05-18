@@ -21,7 +21,7 @@ public class ammoPickup : MonoBehaviour
     }
     void OnTriggerEnter(Collider other){
         if(other.gameObject.tag == "Player"&& cAmmo != mAmmo){
-            gunManager.instance.ammoPickupFull();
+           playerController.instance.activeGun.ammoPickupFull();
             Destroy(gameObject);
         }
         

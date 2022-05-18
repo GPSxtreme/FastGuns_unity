@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class playerController : MonoBehaviour
@@ -14,9 +15,15 @@ public class playerController : MonoBehaviour
     public Animator anim;
     public Transform firePoint;
     public gunManager activeGun;
+    public int currentGun;
+    public List<gunManager> allGuns = new List<gunManager>();
     
     void Awake (){
         instance =  this ;
+    }
+    void Start(){
+        activeGun = allGuns[currentGun];
+        activeGun.gameObject.SetActive(true);
     }
     void Update()
     {   //store y velocity 
@@ -100,7 +107,9 @@ public class playerController : MonoBehaviour
                 fireShot();
             }
         }
-        
+        if(Input.GetKeyDown(KeyCode.Tab)){
+            switchGun();
+        }
         //handle animations
         anim.SetFloat("moveSpeed",moveInput.magnitude);
         anim.SetBool("onGround",canJump);
@@ -116,4 +125,11 @@ public class playerController : MonoBehaviour
         }
         
     }  
+    public void switchGun(){
+        activeGun.gameObject.SetActive(false);
+        currentGun++;
+        if(currentGun >= allGuns.Count) currentGun = 0;
+        activeGun = allGuns[currentGun];
+        activeGun.gameObject.SetActive(true);
+    }
 }

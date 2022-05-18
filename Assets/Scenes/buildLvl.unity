@@ -33059,7 +33059,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &878058751
 Transform:
   m_ObjectHideFlags: 0
@@ -58179,7 +58179,6 @@ GameObject:
   - component: {fileID: 1548511625}
   - component: {fileID: 1548511627}
   - component: {fileID: 1548511628}
-  - component: {fileID: 1548511629}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -58232,6 +58231,11 @@ MonoBehaviour:
   anim: {fileID: 1548511627}
   firePoint: {fileID: 629067400}
   activeGun: {fileID: 878058752}
+  currentGun: 0
+  allGuns:
+  - {fileID: 878058752}
+  - {fileID: 535297598}
+  - {fileID: 1011611084}
 --- !u!143 &1548511626
 CharacterController:
   m_ObjectHideFlags: 0
@@ -58283,24 +58287,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   maxHealth: 50
---- !u!114 &1548511629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1548511623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 465e2f9df51705b48955cd5ee21d1687, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  laserPistol: {fileID: 878058752}
-  laserAutoGun: {fileID: 535297598}
-  laserSniper: {fileID: 1011611084}
-  laserPistolGO: {fileID: 878058750}
-  laserAutoGunGO: {fileID: 535297596}
-  laserSniperGO: {fileID: 1011611082}
 --- !u!4 &1550474234 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b846d53a577963f4fb4ad259ccbc2965, type: 3}
