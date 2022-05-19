@@ -38434,7 +38434,7 @@ MonoBehaviour:
   currentAmmo: 0
   maxAmmoPerClip: 8
   firePoint: {fileID: 302851713}
-  zoomAmount: 10
+  zoomAmount: 5
 --- !u!1 &1012402759 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b6cce8ba4c7d4fd4783edb3fdb7f4a28, type: 3}
