@@ -22,6 +22,7 @@ public class playerHealthController : MonoBehaviour
     public void damagePlayer(float dmgAmount){
         currentHealth -= dmgAmount;
         updateHealthUi();
+        uiController.instance.PlayerHit();
        
         if(currentHealth <= 0) 
         {

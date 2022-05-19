@@ -12,6 +12,8 @@ public class uiController : MonoBehaviour
     public Text ammoText;
 
     public Animator anim;
+    public Image dmgFx;
+    public float dmgAlpha = 0.25f,dmgFadeSpeed = 2f;
     public void Awake(){
         instance = this;
     }
@@ -24,6 +26,10 @@ public class uiController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(dmgFx.color.a != 0)
+        dmgFx.color = new Color(dmgFx.color.r,dmgFx.color.g,dmgFx.color.b,Mathf.MoveTowards(dmgFx.color.a , 0f , dmgFadeSpeed*Time.deltaTime));
+    }
+    public void PlayerHit(){
+        dmgFx.color = new Color(dmgFx.color.r,dmgFx.color.g,dmgFx.color.b,dmgAlpha);
     }
 }
