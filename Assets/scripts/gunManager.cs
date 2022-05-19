@@ -14,6 +14,7 @@ public class gunManager : MonoBehaviour
     public int maxAmmoPerClip = 30;
     public Transform firePoint;
     public float zoomAmount;
+    public string gunName;
    
     // Start is called before the first frame update
     void Awake(){

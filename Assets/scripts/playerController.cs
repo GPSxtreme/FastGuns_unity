@@ -17,6 +17,8 @@ public class playerController : MonoBehaviour
     public gunManager activeGun;
     public int currentGun;
     public List<gunManager> allGuns = new List<gunManager>();
+    public List<gunManager> specialGuns = new List<gunManager>();
+
     public Transform adsPoint,gunHolder;
     private Vector3 gunStartPos;
     public float adsSpeed;
@@ -149,5 +151,17 @@ public class playerController : MonoBehaviour
         activeGun = allGuns[currentGun];
         activeGun.gameObject.SetActive(true);
         firePoint.position = activeGun.firePoint.position;
+    }
+    public void addGun(string gunToAdd){
+        if(specialGuns.Count > 0)
+        {
+            for(int i=0;i<specialGuns.Count;i++){
+                if(specialGuns[i].gunName == gunToAdd){
+                    allGuns.Add(specialGuns[i]);
+                    specialGuns.RemoveAt(i);
+                    i = specialGuns.Count;
+                }
+            }
+        }
     }
 }

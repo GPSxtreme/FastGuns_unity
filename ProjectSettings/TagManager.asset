@@ -10,6 +10,7 @@ TagManager:
   - obstacles
   - healthPickup
   - ammoPickup
+  - specialGunPickup
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - bullets
   - gunHolder
   - triggerPoints
-  - 
+  - postProcessing
   - 
   - 
   - 
