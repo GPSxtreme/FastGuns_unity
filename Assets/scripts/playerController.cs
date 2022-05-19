@@ -17,6 +17,9 @@ public class playerController : MonoBehaviour
     public gunManager activeGun;
     public int currentGun;
     public List<gunManager> allGuns = new List<gunManager>();
+    public Transform adsPoint,gunHolder;
+    private Vector3 gunStartPos;
+    public float adsSpeed;
     
     void Awake (){
         instance =  this ;
@@ -24,6 +27,7 @@ public class playerController : MonoBehaviour
     void Start(){
         activeGun = allGuns[currentGun];
         activeGun.gameObject.SetActive(true);
+        gunStartPos = gunHolder.localPosition;
     }
     void Update()
     {   //store y velocity 
@@ -65,7 +69,20 @@ public class playerController : MonoBehaviour
             moveInput.y = jumpPower;
             canDblJump = false;
         }
-        
+        //handle zoom;
+        if(Input.GetMouseButtonDown(1)){
+            cameraController.instance.zoomIn(activeGun.zoomAmount);
+        }
+        if(Input.GetMouseButton(1)){
+            gunHolder.position = Vector3.MoveTowards(gunHolder.position,adsPoint.position,adsSpeed*Time.deltaTime);
+        }else {
+            gunHolder.localPosition = Vector3.MoveTowards(gunHolder.localPosition,gunStartPos,adsSpeed*Time.deltaTime);
+
+        }
+        if(Input.GetMouseButtonUp(1)){
+            cameraController.instance.zoomOut();
+
+        }
         //append all x,y,z values to the character controller
         charCon.Move(moveInput*Time.deltaTime);
        
@@ -131,5 +148,6 @@ public class playerController : MonoBehaviour
         if(currentGun >= allGuns.Count) currentGun = 0;
         activeGun = allGuns[currentGun];
         activeGun.gameObject.SetActive(true);
+        firePoint.position = activeGun.firePoint.position;
     }
 }
