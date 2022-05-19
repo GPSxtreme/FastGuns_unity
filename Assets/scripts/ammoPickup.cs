@@ -16,8 +16,8 @@ public class ammoPickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cAmmo = gunManager.instance.currentAmmo;
-        mAmmo = gunManager.instance.maxAmmoPerClip;
+        cAmmo = playerController.instance.activeGun.currentAmmo;
+        mAmmo = playerController.instance.activeGun.maxAmmoPerClip;
     }
     void OnTriggerEnter(Collider other){
         if(other.gameObject.tag == "Player"&& cAmmo != mAmmo){
