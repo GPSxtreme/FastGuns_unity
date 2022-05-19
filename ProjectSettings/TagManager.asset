@@ -10,6 +10,7 @@ TagManager:
   - obstacles
   - healthPickup
   - ammoPickup
+  - specialGunPickup
   layers:
   - Default
   - TransparentFX
