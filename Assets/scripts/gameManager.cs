@@ -13,10 +13,15 @@ public class gameManager : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        uiController.instance.pauseMenuAnimControl.keepAnimatorControllerStateOnDisable = true;
     }
     void Update(){
       if(Input.GetKey(KeyCode.L)){
             restartGame();
+        }
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            pauseUnpause();
+            
         }
     }
 
@@ -28,5 +33,17 @@ public class gameManager : MonoBehaviour
     public IEnumerator playerDied(){
         yield return new WaitForSeconds(waitTimeAfterDying);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void pauseUnpause(){
+        if(uiController.instance.pauseScreen.activeInHierarchy){
+            uiController.instance.pauseScreen.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Time.timeScale = 1f;
+        }else
+        {
+            uiController.instance.pauseScreen.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0f;
+        }
     }
 }

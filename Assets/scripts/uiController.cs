@@ -14,6 +14,8 @@ public class uiController : MonoBehaviour
     public Animator anim;
     public Image dmgFx;
     public float dmgAlpha = 0.25f,dmgFadeSpeed = 2f;
+    public GameObject pauseScreen;
+    public Animator pauseMenuAnimControl;
     public void Awake(){
         instance = this;
     }
