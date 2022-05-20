@@ -315,12 +315,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 194592d3470428941a5471509e802f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allBtns:
-  - {fileID: 1596806042}
-  - {fileID: 1629329962}
-  - {fileID: 1359657288}
+  allBtns: []
   highLightedBtn: 0
-  anim: {fileID: 1596806046}
+  anim: {fileID: 0}
 --- !u!1 &172412799
 GameObject:
   m_ObjectHideFlags: 0
