@@ -7,24 +7,26 @@ public class gameManager : MonoBehaviour
 {
     public static gameManager instance;
     public float waitTimeAfterDying = 2f;
+    
     void Awake(){
         instance = this ;
     }
+    
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        uiController.instance.pauseMenuAnimControl.keepAnimatorControllerStateOnDisable = true;
+       Cursor.lockState = CursorLockMode.Locked;
+       //uiController.instance.pauseMenuAnimControl.keepAnimatorControllerStateOnDisable = true;
     }
+    
     void Update(){
       if(Input.GetKey(KeyCode.L)){
             restartGame();
         }
         if(Input.GetKeyDown(KeyCode.Escape)){
-            pauseUnpause();
-            
+           pauseUnpause();
         }
     }
-
+    
     public void restartGame(){
       StartCoroutine(playerDied());
     }

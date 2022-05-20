@@ -11,7 +11,7 @@ public class mainMenuUi : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        btnsAnimControl.keepAnimatorControllerStateOnDisable = true;
+        //btnsAnimControl.keepAnimatorControllerStateOnDisable = true;
     }
 
     // Update is called once per frame
