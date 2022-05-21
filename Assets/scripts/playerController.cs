@@ -23,6 +23,7 @@ public class playerController : MonoBehaviour
     private Vector3 gunStartPos;
     public float adsSpeed;
     public GameObject muzzleFlash;
+    public AudioSource footStepFast , footStepSlow ;
     
     void Awake (){
         instance =  this ;

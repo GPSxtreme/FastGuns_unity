@@ -42,11 +42,16 @@ public class gameManager : MonoBehaviour
             uiController.instance.pauseScreen.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1f;
+            playerController.instance.footStepFast.Play();
+            playerController.instance.footStepSlow.Play();
+
         }else
         {
             uiController.instance.pauseScreen.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0f;
+            playerController.instance.footStepFast.Stop();
+            playerController.instance.footStepSlow.Stop();
         }
     }
 }
