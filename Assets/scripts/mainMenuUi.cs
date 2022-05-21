@@ -23,7 +23,7 @@ public class mainMenuUi : MonoBehaviour
         Debug.Log("exit");
     }
     public void LoadLvl1(){
-        SceneManager.LoadScene("buildLvl");
+        SceneManager.LoadScene("buildLvl"); 
     }
     
     

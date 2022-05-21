@@ -33,7 +33,7 @@ public class playerController : MonoBehaviour
         gunStartPos = gunHolder.localPosition;
     }
     void Update()
-    {   if(!uiController.instance.pauseScreen.activeInHierarchy){
+    {   if(uiController.instance.pauseScreen.activeInHierarchy == false){
          //store y velocity 
         float yStore = moveInput.y;
         Vector3 verticalMove = transform.forward*Input.GetAxis("Vertical");
