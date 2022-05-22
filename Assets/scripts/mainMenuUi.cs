@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class mainMenuUi : MonoBehaviour
 {   
     public Animator btnsAnimControl;
+    public GameObject settingMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,10 @@ public class mainMenuUi : MonoBehaviour
     public void LoadLvl1(){
         SceneManager.LoadScene("buildLvl"); 
     }
-    
-    
+    public void settingsMenuOpen(){
+        settingMenu.SetActive(true);
+    }
+    public void settingsMenuClose(){
+        settingMenu.SetActive(false);
+    }
 }

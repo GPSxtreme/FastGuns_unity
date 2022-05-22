@@ -23,4 +23,7 @@ public class pauseMenu : MonoBehaviour
     public void mainMenu(){
         SceneManager.LoadScene("mainMenuA");
     }
+    public void settingsMenu(){
+        uiController.instance.optionsScreen.SetActive(true);
+    }
 }
