@@ -10,7 +10,6 @@ public class gameManager : MonoBehaviour
     
     void Awake(){
         instance = this ;
-        uiController.instance.pauseScreen.SetActive(false);
     }
     
     void Start()
