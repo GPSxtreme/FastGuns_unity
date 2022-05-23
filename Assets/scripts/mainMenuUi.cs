@@ -13,6 +13,7 @@ public class mainMenuUi : MonoBehaviour
     void Start()
     {
         //btnsAnimControl.keepAnimatorControllerStateOnDisable = true;
+        
     }
 
     // Update is called once per frame

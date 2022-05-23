@@ -789,7 +789,7 @@ MonoBehaviour:
   m_CaptionImage: {fileID: 0}
   m_ItemText: {fileID: 1142641182}
   m_ItemImage: {fileID: 0}
-  m_Value: 0
+  m_Value: 4
   m_Options:
     m_Options:
     - m_Text: Very low
@@ -2063,7 +2063,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Very low
+  m_Text: Very High
 --- !u!222 &521503244
 CanvasRenderer:
   m_ObjectHideFlags: 0
