@@ -318,11 +318,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settingMenu: {fileID: 997662425}
   waitTime: 1
---- !u!95 &130133891 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1339351447, guid: aa31982bc1e29124080bdaa54b11e114, type: 3}
-  m_PrefabInstance: {fileID: 2668486798721496637}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &138208185
 GameObject:
   m_ObjectHideFlags: 0
@@ -7297,22 +7292,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047966786}
   m_CullTransparentMesh: 1
---- !u!225 &2057797919 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 2085129221, guid: aa31982bc1e29124080bdaa54b11e114, type: 3}
-  m_PrefabInstance: {fileID: 2668486798721496637}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2057797920 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2085129222, guid: aa31982bc1e29124080bdaa54b11e114, type: 3}
-  m_PrefabInstance: {fileID: 2668486798721496637}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2073015793
 GameObject:
   m_ObjectHideFlags: 0
@@ -7561,26 +7540,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2085129221, guid: aa31982bc1e29124080bdaa54b11e114, type: 3}
-      propertyPath: m_Alpha
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2668486798097743936, guid: aa31982bc1e29124080bdaa54b11e114, type: 3}
       propertyPath: m_Name
       value: lvlLoader
       objectReference: {fileID: 0}
-    - target: {fileID: 2668486798097743938, guid: aa31982bc1e29124080bdaa54b11e114, type: 3}
-      propertyPath: transitionImg
-      value: 
-      objectReference: {fileID: 2057797920}
-    - target: {fileID: 2668486798097743938, guid: aa31982bc1e29124080bdaa54b11e114, type: 3}
-      propertyPath: transitionAnim
-      value: 
-      objectReference: {fileID: 130133891}
-    - target: {fileID: 2668486798097743938, guid: aa31982bc1e29124080bdaa54b11e114, type: 3}
-      propertyPath: transitionCanvasGrp
-      value: 
-      objectReference: {fileID: 2057797919}
     - target: {fileID: 2668486798097743939, guid: aa31982bc1e29124080bdaa54b11e114, type: 3}
       propertyPath: m_RootOrder
       value: 0
