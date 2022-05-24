@@ -28,6 +28,7 @@ public class playerHealthController : MonoBehaviour
         {
             gameObject.SetActive(false);
             gameManager.instance.restartGame();
+            audioManager.instance.stopBgm();
         }
     }  
     public void maxHealPlayer(){
