@@ -14,6 +14,7 @@ public class gameManager : MonoBehaviour
     
     void Start()
     {
+        Time.timeScale =  1;
         Cursor.lockState = CursorLockMode.Locked;
         uiController.instance.pauseMenuAnimControl.keepAnimatorControllerStateOnDisable = true; 
     }

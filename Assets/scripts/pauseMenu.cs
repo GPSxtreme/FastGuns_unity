@@ -6,9 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class pauseMenu : MonoBehaviour
 {
+    public List<Animator> allBtnAnims = new List<Animator>();
+    [SerializeField] float waitTime = 1f;
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        for(int i= 0 ; i < allBtnAnims.Count ; i++){
+            allBtnAnims[i].updateMode = AnimatorUpdateMode.UnscaledTime;
+        }
         
     }
 
@@ -21,9 +26,15 @@ public class pauseMenu : MonoBehaviour
         gameManager.instance.pauseUnpause();
     }
     public void mainMenu(){
-        SceneManager.LoadScene("mainMenu");
+        Time.timeScale = 1;
+        StartCoroutine(waitForAnim(waitTime));
     }
     public void settingsMenu(){
         uiController.instance.optionsScreen.SetActive(true);
+    }
+    public IEnumerator waitForAnim(float waitTime){
+        lvlLoader.instance.triggerAnimation();
+        yield return new WaitForSeconds(waitTime);
+        SceneManager.LoadScene("mainMenu"); 
     }
 }
