@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class pauseMenu : MonoBehaviour
 {
     public List<Animator> allBtnAnims = new List<Animator>();
-    [SerializeField] float waitTime = 0.3f;
+    [SerializeField] float waitTime = 1f;
     // Start is called before the first frame update
     void Start()
     {   
