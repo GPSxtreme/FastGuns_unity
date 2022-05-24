@@ -8,20 +8,23 @@ using UnityEngine.UI;
 public class lvlLoader : MonoBehaviour
 {
     public static lvlLoader instance;
-    public Animator anim;
-    public CanvasGroup cg;
+    public Animator transitionAnim;
+    public CanvasGroup transitionCanvasGrp;
+    public Image transitionImg;
     
     void Awake(){
         instance = this;
     }
     void start(){
-        cg.alpha = 1;
+        //the below code doesn't work for fek sake..... :(
+        transitionCanvasGrp.alpha = 1;
+        transitionImg.GetComponent<CanvasGroup>().alpha = 1;
     }
     void Update()
     {
         
     }
     public void triggerAnimation(){
-        anim.SetTrigger("start");
+        transitionAnim.SetTrigger("start");
     }    
 }
