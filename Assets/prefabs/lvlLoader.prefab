@@ -412,7 +412,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085129219}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -670,6 +670,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3065e01f66f3244b7c2e82e1fff8fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionAnim: {fileID: 2037358298}
-  transitionCanvasGrp: {fileID: 702760191}
-  transitionImg: {fileID: 702760189}
+  transitionAnim: {fileID: 1339351447}
+  transitionCanvasGrp: {fileID: 2085129221}
+  transitionImg: {fileID: 2085129222}
