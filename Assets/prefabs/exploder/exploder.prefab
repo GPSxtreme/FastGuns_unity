@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 3707807592005910333}
   - component: {fileID: 3707807592005910332}
   - component: {fileID: 3707807592005910335}
+  - component: {fileID: 743627997}
   m_Layer: 0
   m_Name: exploder
   m_TagString: Untagged
@@ -209,7 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceToChase: 5
   damage: 10
-  speed: 10
+  speed: 5
   chasePlayer: 0
   impactFx: {fileID: 3967250281777445018, guid: 6bfb4f550d98e644ebc5c2d41b22d214, type: 3}
 --- !u!135 &3707807592005910335
@@ -225,6 +226,26 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.76
   m_Center: {x: -0.000000003259629, y: 0.23, z: -0.0013856969}
+--- !u!114 &743627997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3707807592005910330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c5e95fcb2e792b49ae2ea54c342bb83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  currentHealth: 0
+  dmgToBeTaken: 1
+  lowHealthIndicationNo: 4
+  effectUponLowHealth: {fileID: 4620730294784816771, guid: ead18aa457c6ff9478efe95636004031, type: 3}
+  effectUponDestroy: {fileID: 1848444239391991664, guid: 3dfc473145930194caf52ebf24e340b2, type: 3}
+  hasLowHealthFx: 1
+  hasDestroyFx: 1
 --- !u!1 &4091368010240986605
 GameObject:
   m_ObjectHideFlags: 0
