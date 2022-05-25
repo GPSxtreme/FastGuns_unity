@@ -24,6 +24,8 @@ public class playerController : MonoBehaviour
     public float adsSpeed;
     public GameObject muzzleFlash;
     public AudioSource footStepFast , footStepSlow ;
+    public float bounceStrength;
+    private bool bounce;
     
     void Awake (){
         instance =  this ;
@@ -74,6 +76,12 @@ public class playerController : MonoBehaviour
         if(canDblJump && Input.GetKeyDown(KeyCode.Space)){
             moveInput.y = jumpPower;
             canDblJump = false;
+            audioManager.instance.playSfx(15);
+        }
+        if(bounce){
+            bounce = false;
+            moveInput.y = bounceStrength;
+            canDblJump = true;
         }
         //handle zoom;
         if(Input.GetMouseButtonDown(1)){
@@ -169,5 +177,9 @@ public class playerController : MonoBehaviour
                 }
             }
         }
+    }
+    public void playerBounce(float bouncePadStrength){
+        bounceStrength = bouncePadStrength;
+        bounce = true;
     }
 }

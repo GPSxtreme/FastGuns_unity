@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FlashYellow
+  m_Name: yellow
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 2
@@ -63,7 +63,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 1
     - _GlossyReflections: 1
-    - _Metallic: 0.5
+    - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -73,6 +73,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.9960785, g: 1, b: 0.18431373, a: 1}
-    - _EmissionColor: {r: 2.9960785, g: 2.9960785, b: 0.078431375, a: 1}
+    - _Color: {r: 0.93052006, g: 1, b: 0, a: 1}
+    - _EmissionColor: {r: 0.84687346, g: 1, b: 0, a: 1}
   m_BuildTextureStacks: []
