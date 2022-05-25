@@ -24,6 +24,7 @@ public class checkPointController : MonoBehaviour
     }
     private void OnTriggerEnter (Collider other ){
         if(other.gameObject.tag == "Player"){
+            audioManager.instance.playSfx(1);
             PlayerPrefs.SetString(SceneManager.GetActiveScene().name + "_cp",cpName);
         }
     }

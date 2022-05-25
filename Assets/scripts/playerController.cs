@@ -68,6 +68,7 @@ public class playerController : MonoBehaviour
         if(Input.GetKey(KeyCode.Space)&&canJump){
             moveInput.y = jumpPower; 
             canDblJump = true;
+            audioManager.instance.playSfx(15);
         }
         //handle double jump
         if(canDblJump && Input.GetKeyDown(KeyCode.Space)){

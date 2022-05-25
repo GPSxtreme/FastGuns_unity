@@ -31,6 +31,7 @@ public class exploderEnemy : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         if(other.gameObject.tag == "Player"){
             playerHealthController.instance.damagePlayer(damage);
+            audioManager.instance.playSfx(3);
             uiController.instance.PlayerHit();
             Instantiate(impactFx,transform.position,transform.rotation);
             Destroy(gameObject);

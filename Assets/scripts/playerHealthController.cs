@@ -20,6 +20,7 @@ public class playerHealthController : MonoBehaviour
 
     }
     public void damagePlayer(float dmgAmount){
+        audioManager.instance.playSfx(14);
         currentHealth -= dmgAmount;
         updateHealthUi();
         uiController.instance.PlayerHit();

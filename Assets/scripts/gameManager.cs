@@ -29,7 +29,8 @@ public class gameManager : MonoBehaviour
     }
     
     public void restartGame(){
-      StartCoroutine(playerDied());
+        audioManager.instance.playSfx(13);
+        StartCoroutine(playerDied());
     }
     
     // better Invoke method(simultaneously run two functions at a time in a function)

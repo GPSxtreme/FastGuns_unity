@@ -25,6 +25,7 @@ public class healthPickup : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         if(other.gameObject.tag == "Player" && cHealth != mHealth){
            if( cHealth < mHealth ){
+                audioManager.instance.playSfx(12);
                 playerHealthController.instance.maxHealPlayer();
             }
             Destroy(this.gameObject);   
