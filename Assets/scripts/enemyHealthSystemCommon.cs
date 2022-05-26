@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class enemyHealthSystemCommon : MonoBehaviour
 {
+    public static enemyHealthSystemCommon instance;
     public float maxHealth;
     public float currentHealth;
-    public float dmgToBeTaken;
     public float lowHealthIndicationNo;
     public ParticleSystem effectUponLowHealth;
     public ParticleSystem effectUponDestroy;
@@ -14,6 +14,10 @@ public class enemyHealthSystemCommon : MonoBehaviour
     private bool lowHealthFxOn;
     private bool destroyFxOn;
     public bool hasDestroyFx;
+    
+    void Awake(){
+        instance = this;
+    }
     void Start()
     {
         currentHealth = maxHealth;
@@ -35,9 +39,14 @@ public class enemyHealthSystemCommon : MonoBehaviour
             destroyFxOn = true;
         }
     }
+    /*
     private void OnTriggerEnter(Collider other){
        if(other.gameObject.tag == "playerBullet"){
            currentHealth -= dmgToBeTaken;
         }
+    }
+    */
+    public void damage(float dmgAmount){
+        currentHealth -= dmgAmount;
     }
 }

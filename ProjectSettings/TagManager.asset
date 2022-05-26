@@ -12,6 +12,8 @@ TagManager:
   - ammoPickup
   - specialGunPickup
   - playerBullet
+  - turret
+  - exploder
   layers:
   - Default
   - TransparentFX

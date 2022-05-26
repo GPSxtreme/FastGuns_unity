@@ -112,11 +112,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 50
-  lifeTime: 1
+  lifeTime: 2
   rB: {fileID: 6320362737238355784}
   impactEffect: {fileID: 6168435177448452506, guid: dae269d979d7af84d83ac88d62e32bca, type: 3}
   impactFxSphere: {fileID: 4170008745850294816, guid: 26a3a681bc5e620429e235b1b378c23c, type: 3}
-  dmgAmount: 1
+  dmgAmount: 2
 --- !u!54 &6320362737238355784
 Rigidbody:
   m_ObjectHideFlags: 0

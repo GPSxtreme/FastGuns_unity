@@ -27,6 +27,7 @@ public class playerHealthController : MonoBehaviour
        
         if(currentHealth <= 0) 
         {
+            uiController.instance.healthText.text = "HEALTH: "+ 0 +"/"+ maxHealth;  
             gameObject.SetActive(false);
             gameManager.instance.restartGame();
             audioManager.instance.stopBgm();
