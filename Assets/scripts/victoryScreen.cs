@@ -39,6 +39,11 @@ public class victoryScreen : MonoBehaviour
         mainMenuBtn.SetActive(true);
     }
     public void mainMenuReturn(){
+        lvlLoader.instance.triggerAnimation();
+        StartCoroutine(endAnimCo());
+    }
+    private IEnumerator endAnimCo(){
+        yield return new  WaitForSeconds(1f);
         SceneManager.LoadScene("mainMenu");
     }
 }
