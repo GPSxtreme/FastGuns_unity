@@ -29,8 +29,11 @@ public class pauseMenu : MonoBehaviour
         Time.timeScale = 1;
         StartCoroutine(waitForAnim(waitTime));
     }
-    public void settingsMenu(){
+    public void settingsMenuOpen(){
         uiController.instance.optionsScreen.SetActive(true);
+        settingsMenu.instance.masterVolumeSlider.value = PlayerPrefs.GetInt("masterVolume");
+        settingsMenu.instance.musicVolumeSlider.value = PlayerPrefs.GetInt("musicVolume");
+        settingsMenu.instance.sfxVolumeSlider.value = PlayerPrefs.GetInt("sfxVolume");
     }
     public IEnumerator waitForAnim(float waitTime){
         lvlLoader.instance.triggerAnimation();

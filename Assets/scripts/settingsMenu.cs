@@ -6,11 +6,21 @@ using UnityEngine.UI;
 
 public class settingsMenu : MonoBehaviour
 {
+    public static settingsMenu instance;
     public AudioMixer masterMixer;
     public Dropdown resolutionDropDown;
     Resolution[] resolutions;
-
+    public Slider masterVolumeSlider;
+    public Slider musicVolumeSlider;
+    public Slider sfxVolumeSlider;
+    
+    public void Awake(){
+        instance = this;
+    }
+        
+    
     void Start(){
+        //setting up with resolutions 
         resolutions = Screen.resolutions;
         resolutionDropDown.ClearOptions();
         List<string> options = new List<string>();
@@ -25,17 +35,22 @@ public class settingsMenu : MonoBehaviour
         resolutionDropDown.AddOptions(options);
         resolutionDropDown.value = currentResolutionIndex;
         resolutionDropDown.RefreshShownValue();
+        
     }
     public void goBack(){
         uiController.instance.optionsScreen.SetActive(false);
     }
     public void setMasterVolume(float volume){
         masterMixer. SetFloat("masterVolume",volume);
+        PlayerPrefs.SetInt("masterVolume",((int)volume));
     }
     public void setMusicVolume(float volume){
         masterMixer.SetFloat("musicVolume",volume);
-    }public void setSfxVolume(float volume){
+        PlayerPrefs.SetInt("musicVolume",((int)volume));
+    }
+    public void setSfxVolume(float volume){
         masterMixer.SetFloat("sfxVolume",volume);
+        PlayerPrefs.SetInt("sfxVolume",((int)volume));
     }
     public void setQuality (int qualityIndex){
         QualitySettings.SetQualityLevel(qualityIndex);

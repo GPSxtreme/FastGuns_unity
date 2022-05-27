@@ -1,12 +1,14 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 
 public class gameManager : MonoBehaviour
 {
     public static gameManager instance;
     public float waitTimeAfterDying = 2f;
+    public AudioMixer masterMixer;
     
     void Awake(){
         instance = this ;
@@ -16,14 +18,19 @@ public class gameManager : MonoBehaviour
     {
         Time.timeScale =  1;
         Cursor.lockState = CursorLockMode.Locked;
-        uiController.instance.pauseMenuAnimControl.keepAnimatorControllerStateOnDisable = true; 
+        uiController.instance.pauseMenuAnimControl.keepAnimatorControllerStateOnDisable = true;
+        //set volume of sfx and music 
+        masterMixer. SetFloat("masterVolume",PlayerPrefs.GetInt("masterVolume"));
+        masterMixer.SetFloat("musicVolume",PlayerPrefs.GetInt("musicVolume"));
+        masterMixer.SetFloat("sfxVolume",PlayerPrefs.GetInt("sfxVolume"));
     }
     
     void Update(){
+      
       if(Input.GetKey(KeyCode.L)){
             restartGame();
         }
-        if(Input.GetKeyDown(KeyCode.Escape)){
+        if(Input.GetKeyDown(KeyCode.Escape)&& uiController.instance.optionsScreen.activeInHierarchy == false){
            pauseUnpause();
         }
     }

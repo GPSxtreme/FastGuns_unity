@@ -5710,7 +5710,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1484888642}
         m_TargetAssemblyTypeName: pauseMenu, Assembly-CSharp
-        m_MethodName: settingsMenu
+        m_MethodName: settingsMenuOpen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11286,6 +11286,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nxtLvl: victoryScreen
+  loadNxtLvl: 0
+  loadGivenLvl: 1
   delayTime: 3.75
 --- !u!65 &257537730
 BoxCollider:
@@ -48332,6 +48334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitTimeAfterDying: 2
+  masterMixer: {fileID: 24100000, guid: 5c6ceceaaf838c446997751236223a16, type: 2}
 --- !u!1001 &996796813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57998,6 +58001,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   masterMixer: {fileID: 24100000, guid: 5c6ceceaaf838c446997751236223a16, type: 2}
   resolutionDropDown: {fileID: 1061622871}
+  masterVolumeSlider: {fileID: 960742306}
+  musicVolumeSlider: {fileID: 1065293064}
+  sfxVolumeSlider: {fileID: 649437682}
 --- !u!1 &1199877653 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b6cce8ba4c7d4fd4783edb3fdb7f4a28, type: 3}
@@ -71014,6 +71020,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 702760191, guid: aa31982bc1e29124080bdaa54b11e114, type: 3}
       propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2085129221, guid: aa31982bc1e29124080bdaa54b11e114, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2085129221, guid: aa31982bc1e29124080bdaa54b11e114, type: 3}
+      propertyPath: m_BlocksRaycasts
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2668486797190726158, guid: aa31982bc1e29124080bdaa54b11e114, type: 3}
