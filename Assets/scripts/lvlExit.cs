@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class lvlExit : MonoBehaviour
 {
     public string nxtLvl;
+    public bool loadNxtLvl;
+    public bool loadGivenLvl;
     public float delayTime;
     void Start()
     {
@@ -30,6 +32,13 @@ public class lvlExit : MonoBehaviour
     private IEnumerator endCo(float delayTime){
         lvlLoader.instance.triggerAnimation(); 
         yield return new WaitForSeconds(delayTime);
-        SceneManager.LoadScene(nxtLvl);
+        if(loadGivenLvl){
+            SceneManager.LoadScene(nxtLvl);
+        }
+        if(loadNxtLvl)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1); 
+        }
+        
     }
 }

@@ -9,6 +9,7 @@ public class bouncePad : MonoBehaviour
    private void OnTriggerEnter(Collider other){
        if(other.gameObject.tag == "Player"){
            playerController.instance.playerBounce(bouncePadStrength);
+           audioManager.instance.playSfx(0);
        }
    }
 }
