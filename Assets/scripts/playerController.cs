@@ -26,6 +26,7 @@ public class playerController : MonoBehaviour
     public AudioSource footStepFast , footStepSlow ;
     public float bounceStrength;
     private bool bounce;
+    public bool isGameEnded;
     
     void Awake (){
         instance =  this ;
@@ -36,7 +37,7 @@ public class playerController : MonoBehaviour
         gunStartPos = gunHolder.localPosition;
     }
     void Update()
-    {   if(uiController.instance.pauseScreen.activeInHierarchy == false){
+    {   if(uiController.instance.pauseScreen.activeInHierarchy == false && isGameEnded == false){
          //store y velocity 
         float yStore = moveInput.y;
         Vector3 verticalMove = transform.forward*Input.GetAxis("Vertical");
