@@ -8,7 +8,7 @@ public class turret : MonoBehaviour
     public float rangeToTargetPlayer,timeBtwShots = 0.5f;
    // public float turretDmgAmount;
     public float shotCounter;
-    public Transform gun,firePoint;
+    public Transform gun,firePoint,firePoint2;
     public float rotateSpeed = 1f ;
     public float rotateDistance=10f;
     // Start is called before the first frame update
@@ -25,6 +25,7 @@ public class turret : MonoBehaviour
             shotCounter -= Time.deltaTime;
             if(shotCounter <= 0){
                 Instantiate(bullet,firePoint.position,firePoint.rotation);
+                Instantiate(bullet,firePoint2.position,firePoint2.rotation);
                 shotCounter = timeBtwShots;
             }
         }
