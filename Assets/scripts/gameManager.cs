@@ -9,6 +9,7 @@ public class gameManager : MonoBehaviour
     public static gameManager instance;
     public float waitTimeAfterDying = 2f;
     public AudioMixer masterMixer;
+    public bool setSettings;
     
     void Awake(){
         instance = this ;
@@ -19,10 +20,19 @@ public class gameManager : MonoBehaviour
         Time.timeScale =  1;
         Cursor.lockState = CursorLockMode.Locked;
         uiController.instance.pauseMenuAnimControl.keepAnimatorControllerStateOnDisable = true;
-        //set volume of sfx and music 
-        masterMixer. SetFloat("masterVolume",PlayerPrefs.GetInt("masterVolume"));
-        masterMixer.SetFloat("musicVolume",PlayerPrefs.GetInt("musicVolume"));
-        masterMixer.SetFloat("sfxVolume",PlayerPrefs.GetInt("sfxVolume"));
+        if(setSettings){
+            //set volume of sfx and music 
+            masterMixer. SetFloat("masterVolume",PlayerPrefs.GetInt("masterVolume"));
+            masterMixer.SetFloat("musicVolume",PlayerPrefs.GetInt("musicVolume"));
+            masterMixer.SetFloat("sfxVolume",PlayerPrefs.GetInt("sfxVolume"));
+        }
+        
+    }
+    public void setResolution(int resolutionX, int resolutionY){
+        Screen.SetResolution(resolutionX,resolutionY,Screen.fullScreen);
+    }
+    public void setQuality (int qualityIndex){
+        QualitySettings.SetQualityLevel(qualityIndex);
     }
     
     void Update(){

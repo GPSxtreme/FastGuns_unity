@@ -48335,6 +48335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitTimeAfterDying: 2
   masterMixer: {fileID: 24100000, guid: 5c6ceceaaf838c446997751236223a16, type: 2}
+  setSettings: 1
 --- !u!1001 &996796813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58001,6 +58002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   masterMixer: {fileID: 24100000, guid: 5c6ceceaaf838c446997751236223a16, type: 2}
   resolutionDropDown: {fileID: 1061622871}
+  graphicsDropDown: {fileID: 210132154}
   masterVolumeSlider: {fileID: 960742306}
   musicVolumeSlider: {fileID: 1065293064}
   sfxVolumeSlider: {fileID: 649437682}

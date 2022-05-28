@@ -9,6 +9,7 @@ public class settingsMenu : MonoBehaviour
     public static settingsMenu instance;
     public AudioMixer masterMixer;
     public Dropdown resolutionDropDown;
+    public Dropdown graphicsDropDown;
     Resolution[] resolutions;
     public Slider masterVolumeSlider;
     public Slider musicVolumeSlider;
@@ -54,12 +55,16 @@ public class settingsMenu : MonoBehaviour
     }
     public void setQuality (int qualityIndex){
         QualitySettings.SetQualityLevel(qualityIndex);
+        PlayerPrefs.SetInt("qualityIndex",qualityIndex);
     }
     public void setFullScreen(bool isFullScreen){
         Screen.fullScreen = isFullScreen;
     }
     public void setResolution(int resolutionIndex){
         Resolution resolution = resolutions[resolutionIndex];
+        PlayerPrefs.SetInt("resolutionIndex",resolutionIndex);
+        PlayerPrefs.SetInt("resolutionX",resolution.width);
+        PlayerPrefs.SetInt("resolutionY",resolution.height);
         Screen.SetResolution(resolution.width,resolution.height,Screen.fullScreen);
     }
 }
