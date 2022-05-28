@@ -79184,6 +79184,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: lvlEssentials
       objectReference: {fileID: 0}
+    - target: {fileID: 3255311580046150914, guid: 747db7caa6eb3764783792c468fb5f4b, type: 3}
+      propertyPath: loadNxtLvl
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255311580046150914, guid: 747db7caa6eb3764783792c468fb5f4b, type: 3}
+      propertyPath: loadGivenLvl
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 747db7caa6eb3764783792c468fb5f4b, type: 3}
 --- !u!1001 &3698826303623195793
