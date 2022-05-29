@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class lvlExit : MonoBehaviour
 {
+    public static lvlExit instance;
     public string nxtLvl;
     public bool loadNxtLvl;
     public bool loadGivenLvl;
     public float delayTime;
-    void Start()
+    void Awake()
     {
-        
+        instance = this;
     }
 
     // Update is called once per frame
