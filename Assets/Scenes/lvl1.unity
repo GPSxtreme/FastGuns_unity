@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 87b49786a722b734cbffa5e4f2036248, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -7797,15 +7797,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3255311579554072920, guid: 747db7caa6eb3764783792c468fb5f4b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 41.28
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3255311579554072920, guid: 747db7caa6eb3764783792c468fb5f4b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 41.02
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3255311579554072920, guid: 747db7caa6eb3764783792c468fb5f4b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.41
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255311579554072920, guid: 747db7caa6eb3764783792c468fb5f4b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8754261
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255311579554072920, guid: 747db7caa6eb3764783792c468fb5f4b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.40821788
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255311579554072920, guid: 747db7caa6eb3764783792c468fb5f4b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.23456968
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255311579554072920, guid: 747db7caa6eb3764783792c468fb5f4b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.10938163
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255311579554072920, guid: 747db7caa6eb3764783792c468fb5f4b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 3255311579554072921, guid: 747db7caa6eb3764783792c468fb5f4b, type: 3}
       propertyPath: m_Intensity
