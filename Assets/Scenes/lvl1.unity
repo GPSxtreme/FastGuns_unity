@@ -8008,9 +8008,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 75.321
       objectReference: {fileID: 0}
+    - target: {fileID: 3255311579554072920, guid: 747db7caa6eb3764783792c468fb5f4b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 41.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255311579554072920, guid: 747db7caa6eb3764783792c468fb5f4b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 41.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255311579554072920, guid: 747db7caa6eb3764783792c468fb5f4b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.41
+      objectReference: {fileID: 0}
     - target: {fileID: 3255311579554072921, guid: 747db7caa6eb3764783792c468fb5f4b, type: 3}
       propertyPath: m_Intensity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255311579554072921, guid: 747db7caa6eb3764783792c468fb5f4b, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3255311580046150912, guid: 747db7caa6eb3764783792c468fb5f4b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28944,7 +28960,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!1001 &2043459835
 PrefabInstance:

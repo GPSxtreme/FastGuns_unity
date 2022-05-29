@@ -63,6 +63,10 @@ public class playerController : MonoBehaviour
         }
         
         canJump = Physics.OverlapSphere(groundCheckPoint.position,0.15f,groundLayer).Length>0;
+        //restart game when player falls off map 
+        if(transform.position.y < -50){
+            gameManager.instance.restartGame();
+        }
         //double jump
         if(canJump){
             canDblJump = false;
