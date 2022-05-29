@@ -7115,7 +7115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TotalEnemyCount: 0
   passPercentage: 50
-  lvlExit: {fileID: 634683468}
+  lvlExit: {fileID: 580470698}
 --- !u!1001 &505412805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7845,10 +7845,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3255311580046150915, guid: 747db7caa6eb3764783792c468fb5f4b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 747db7caa6eb3764783792c468fb5f4b, type: 3}
+--- !u!65 &580470698 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 3255311580046150913, guid: 747db7caa6eb3764783792c468fb5f4b, type: 3}
+  m_PrefabInstance: {fileID: 580470697}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &582767223 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b846d53a577963f4fb4ad259ccbc2965, type: 3}
@@ -8204,11 +8209,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: 533b3ece5aefbd442afe9a035c975222, type: 3}
---- !u!1 &634683468 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3255311580046150915, guid: 747db7caa6eb3764783792c468fb5f4b, type: 3}
-  m_PrefabInstance: {fileID: 580470697}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &637978700 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b846d53a577963f4fb4ad259ccbc2965, type: 3}
@@ -23322,7 +23322,7 @@ Transform:
   - {fileID: 465454967}
   - {fileID: 1327896043}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1727894829 stripped
 Transform:
@@ -29102,60 +29102,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: 533b3ece5aefbd442afe9a035c975222, type: 3}
---- !u!1001 &8032596213974823213
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8032596213661349266, guid: c590726a8b2a9e74baa36768b4a5b2a9, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032596213661349266, guid: c590726a8b2a9e74baa36768b4a5b2a9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032596213661349266, guid: c590726a8b2a9e74baa36768b4a5b2a9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032596213661349266, guid: c590726a8b2a9e74baa36768b4a5b2a9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032596213661349266, guid: c590726a8b2a9e74baa36768b4a5b2a9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032596213661349266, guid: c590726a8b2a9e74baa36768b4a5b2a9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032596213661349266, guid: c590726a8b2a9e74baa36768b4a5b2a9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032596213661349266, guid: c590726a8b2a9e74baa36768b4a5b2a9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032596213661349266, guid: c590726a8b2a9e74baa36768b4a5b2a9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032596213661349266, guid: c590726a8b2a9e74baa36768b4a5b2a9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032596213661349266, guid: c590726a8b2a9e74baa36768b4a5b2a9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032596213661349267, guid: c590726a8b2a9e74baa36768b4a5b2a9, type: 3}
-      propertyPath: m_Name
-      value: lvlSpecificsDialogues
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c590726a8b2a9e74baa36768b4a5b2a9, type: 3}

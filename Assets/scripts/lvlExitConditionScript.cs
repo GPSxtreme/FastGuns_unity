@@ -8,7 +8,7 @@ public class lvlExitConditionScript : MonoBehaviour
     public int TotalEnemyCount;
     private int enemyCount;
     public float passPercentage;
-    public GameObject lvlExit;
+    public BoxCollider lvlExit;
 
     void Start()
     {
@@ -20,7 +20,7 @@ public class lvlExitConditionScript : MonoBehaviour
     {
         enemyCount = transform.childCount;
         if(enemyCount <= TotalEnemyCount*(passPercentage/100)){
-            lvlExit.SetActive(true);
+            lvlExit.isTrigger = true;
         }
     }
 }
