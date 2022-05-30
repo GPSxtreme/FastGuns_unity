@@ -29,6 +29,7 @@ public class pauseMenu : MonoBehaviour
     }
     public void mainMenu(){
         Time.timeScale = 1;
+        PlayerPrefs.SetString("contLvl",SceneManager.GetActiveScene().name);
         StartCoroutine(waitForAnim(waitTime));
     }
     public void settingsMenuOpen(){

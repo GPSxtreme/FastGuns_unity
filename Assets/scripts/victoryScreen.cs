@@ -26,6 +26,10 @@ public class victoryScreen : MonoBehaviour
     void Start(){
         blackScreen.color = new Color(blackScreen.color.r,blackScreen.color.g,blackScreen.color.b,1f);
         StartCoroutine(showObjectsCo());
+        PlayerPrefs.SetString("contLvl","");
+        PlayerPrefs.SetString("lvl0" + "_cp","");
+        PlayerPrefs.SetString("lvl1" + "_cp","");
+        PlayerPrefs.SetString("lvl2" + "_cp","");
     }
     // Update is called once per frame
     void Update()

@@ -10,6 +10,7 @@ public class mainMenuUi : MonoBehaviour
 {   
     public static mainMenuUi instance;
     public GameObject settingMenu;
+    public GameObject continueBtn;
     public AudioMixer masterMixer;
     Resolution[] resolutions;
     [SerializeField] float waitTime = 1f;
@@ -27,12 +28,24 @@ public class mainMenuUi : MonoBehaviour
         //set quality and resolution
         setResolution(PlayerPrefs.GetInt("resolutionX"),PlayerPrefs.GetInt("resolutionY"));
         setQuality(PlayerPrefs.GetInt("qualityIndex"));
+        //setting up resume btn
+        if(PlayerPrefs.HasKey("contLvl")){
+            if(PlayerPrefs.GetString("contLvl") == ""){
+                continueBtn.SetActive(false);
+            }
+        }
+        else{
+            continueBtn.SetActive(false);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
+            if(PlayerPrefs.GetString("contLvl") == "lvl0"&& PlayerPrefs.GetString("lvl0" + "_cp") == ""){
+                continueBtn.SetActive(false);
+            }
+            
     }
     
     public void setResolution(int resolutionX, int resolutionY){
@@ -41,13 +54,20 @@ public class mainMenuUi : MonoBehaviour
     public void setQuality (int qualityIndex){
         QualitySettings.SetQualityLevel(qualityIndex);
     }
+    public void resume(){
+        SceneManager.LoadScene(PlayerPrefs.GetString("contLvl"));
+    }
     public void exit(){
         Application.Quit();
         Debug.Log("exit");
     }
     public void LoadLvl1(){
+        PlayerPrefs.SetString("contLvl","");
+        PlayerPrefs.SetString("lvl0" + "_cp","");
+        PlayerPrefs.SetString("lvl1" + "_cp","");
+        PlayerPrefs.SetString("lvl2" + "_cp","");
+        StartCoroutine(waitForAnim(waitTime));
         
-       StartCoroutine(waitForAnim(waitTime));
     }
     public void settingsMenuOpen(){
         settingMenu.SetActive(true);

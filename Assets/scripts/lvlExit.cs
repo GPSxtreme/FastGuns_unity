@@ -38,7 +38,10 @@ public class lvlExit : MonoBehaviour
         }
         if(loadNxtLvl)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1); 
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            string nextSceneName = SceneManager.GetSceneByBuildIndex(currentSceneIndex + 1).name;
+            PlayerPrefs.SetString(nextSceneName + "_cp",null);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         }
         
     }
