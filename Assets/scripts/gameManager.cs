@@ -25,6 +25,8 @@ public class gameManager : MonoBehaviour
             masterMixer. SetFloat("masterVolume",PlayerPrefs.GetInt("masterVolume"));
             masterMixer.SetFloat("musicVolume",PlayerPrefs.GetInt("musicVolume"));
             masterMixer.SetFloat("sfxVolume",PlayerPrefs.GetInt("sfxVolume"));
+            //set mouse sens 
+            playerController.instance.mouseSens = PlayerPrefs.GetFloat("mouseSens");
         }
         
     }

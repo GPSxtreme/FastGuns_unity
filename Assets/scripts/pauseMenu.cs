@@ -39,6 +39,7 @@ public class pauseMenu : MonoBehaviour
         settingsMenu.instance.musicVolumeSlider.value = PlayerPrefs.GetInt("musicVolume");
         settingsMenu.instance.sfxVolumeSlider.value = PlayerPrefs.GetInt("sfxVolume");
         settingsMenu.instance.graphicsDropDown.value = PlayerPrefs.GetInt("qualityIndex");
+        settingsMenu.instance.mouseSensSlider.value = PlayerPrefs.GetFloat("mouseSens");
         settingsMenu.instance.graphicsDropDown.RefreshShownValue();
         StartCoroutine(resolCo());
     }

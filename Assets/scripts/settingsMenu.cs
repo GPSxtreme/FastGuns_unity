@@ -14,6 +14,7 @@ public class settingsMenu : MonoBehaviour
     public Slider masterVolumeSlider;
     public Slider musicVolumeSlider;
     public Slider sfxVolumeSlider;
+    public Slider mouseSensSlider;
     
     public void Awake(){
         instance = this;
@@ -66,5 +67,9 @@ public class settingsMenu : MonoBehaviour
         PlayerPrefs.SetInt("resolutionX",resolution.width);
         PlayerPrefs.SetInt("resolutionY",resolution.height);
         Screen.SetResolution(resolution.width,resolution.height,Screen.fullScreen);
+    }
+    public void changeSens(float value){
+        playerController.instance.mouseSens = value;
+        PlayerPrefs.SetFloat("mouseSens",value);
     }
 }
