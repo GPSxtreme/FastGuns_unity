@@ -1,4 +1,4 @@
-# FPS-shooter_Unity
+# Fast Guns
  My first FPS shooter built using unity engine.
 
 Images:
