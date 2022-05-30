@@ -26,7 +26,7 @@ public class mainMenuUi : MonoBehaviour
         masterMixer.SetFloat("musicVolume",PlayerPrefs.GetInt("musicVolume"));
         masterMixer.SetFloat("sfxVolume",PlayerPrefs.GetInt("sfxVolume"));
         //set quality and resolution
-        setResolution(PlayerPrefs.GetInt("resolutionX"),PlayerPrefs.GetInt("resolutionY"));
+       // setResolution(PlayerPrefs.GetInt("resolutionX"),PlayerPrefs.GetInt("resolutionY"));
         setQuality(PlayerPrefs.GetInt("qualityIndex"));
         //setting up resume btn
         if(PlayerPrefs.HasKey("contLvl")){
