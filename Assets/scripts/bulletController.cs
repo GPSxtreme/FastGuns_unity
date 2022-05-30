@@ -28,13 +28,16 @@ public class bulletController : MonoBehaviour
          { 
              other.gameObject.GetComponent<enemyHealthController>().damageEnemy(dmgAmount);
          }
-         
+         if(other.gameObject.tag == "exploder"||other.gameObject.tag == "turret"){
+             other.gameObject.GetComponent<enemyHealthSystemCommon>().damage(dmgAmount);
+         }
          if(other.gameObject.tag == "headShot"){
             other.transform.parent.parent.parent.GetComponent<enemyHealthController>().damageEnemy(dmgAmount*3);
          }
          if(other.gameObject.tag == "obstacles"){
             Destroy(gameObject);
         }
-        Instantiate(impactEffect,transform.position+(transform.forward*(-moveSpeed*Time.deltaTime)),transform.rotation); 
+        Instantiate(impactEffect,transform.position+(transform.forward*(-moveSpeed*Time.deltaTime)),transform.rotation);
+        Destroy(gameObject);
     }
 }

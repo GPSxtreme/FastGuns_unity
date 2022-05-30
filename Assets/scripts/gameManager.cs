@@ -1,12 +1,15 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 
 public class gameManager : MonoBehaviour
 {
     public static gameManager instance;
     public float waitTimeAfterDying = 2f;
+    public AudioMixer masterMixer;
+    public bool setSettings;
     
     void Awake(){
         instance = this ;
@@ -16,20 +19,35 @@ public class gameManager : MonoBehaviour
     {
         Time.timeScale =  1;
         Cursor.lockState = CursorLockMode.Locked;
-        uiController.instance.pauseMenuAnimControl.keepAnimatorControllerStateOnDisable = true; 
+        uiController.instance.pauseMenuAnimControl.keepAnimatorControllerStateOnDisable = true;
+        if(setSettings){
+            //set volume of sfx and music 
+            masterMixer. SetFloat("masterVolume",PlayerPrefs.GetInt("masterVolume"));
+            masterMixer.SetFloat("musicVolume",PlayerPrefs.GetInt("musicVolume"));
+            masterMixer.SetFloat("sfxVolume",PlayerPrefs.GetInt("sfxVolume"));
+        }
+        
+    }
+    public void setResolution(int resolutionX, int resolutionY){
+        Screen.SetResolution(resolutionX,resolutionY,Screen.fullScreen);
+    }
+    public void setQuality (int qualityIndex){
+        QualitySettings.SetQualityLevel(qualityIndex);
     }
     
     void Update(){
+      
       if(Input.GetKey(KeyCode.L)){
             restartGame();
         }
-        if(Input.GetKeyDown(KeyCode.Escape)){
+        if(Input.GetKeyDown(KeyCode.Escape)&& uiController.instance.optionsScreen.activeInHierarchy == false){
            pauseUnpause();
         }
     }
     
     public void restartGame(){
-      StartCoroutine(playerDied());
+        audioManager.instance.playSfx(13);
+        StartCoroutine(playerDied());
     }
     
     // better Invoke method(simultaneously run two functions at a time in a function)

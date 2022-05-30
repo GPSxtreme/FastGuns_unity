@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -4235203837868825921}
   m_Layer: 7
   m_Name: laserVioletSniper_bullet
-  m_TagString: Untagged
+  m_TagString: playerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

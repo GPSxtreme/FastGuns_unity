@@ -11,6 +11,9 @@ TagManager:
   - healthPickup
   - ammoPickup
   - specialGunPickup
+  - playerBullet
+  - turret
+  - exploder
   layers:
   - Default
   - TransparentFX

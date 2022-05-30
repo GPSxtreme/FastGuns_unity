@@ -21,7 +21,8 @@ public class ammoPickup : MonoBehaviour
     }
     void OnTriggerEnter(Collider other){
         if(other.gameObject.tag == "Player"&& cAmmo != mAmmo){
-           playerController.instance.activeGun.ammoPickupFull();
+            audioManager.instance.playSfx(10);
+            playerController.instance.activeGun.ammoPickupFull();
             Destroy(gameObject);
         }
         

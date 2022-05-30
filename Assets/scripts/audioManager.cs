@@ -5,7 +5,10 @@ using UnityEngine;
 public class audioManager : MonoBehaviour
 {
     public static audioManager instance ;
+    public AudioSource[] soundEffects;
     public AudioSource bgm;
+    public AudioSource lvlComplete;
+
     public void Awake (){
         instance = this;
     }
@@ -22,5 +25,16 @@ public class audioManager : MonoBehaviour
     }
     public void stopBgm(){
         bgm.Stop();
+    }
+    public void playLvlVictory(){
+        stopBgm();
+        lvlComplete.Play();
+    }
+    public void playSfx(int sfxNo){
+        soundEffects[sfxNo].Stop();
+        soundEffects[sfxNo].Play();
+    }
+    public void stopSfx(int sfxNo){
+        soundEffects[sfxNo].Stop();
     }
 }

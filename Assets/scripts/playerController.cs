@@ -24,6 +24,9 @@ public class playerController : MonoBehaviour
     public float adsSpeed;
     public GameObject muzzleFlash;
     public AudioSource footStepFast , footStepSlow ;
+    public float bounceStrength;
+    private bool bounce;
+    public bool isGameEnded;
     
     void Awake (){
         instance =  this ;
@@ -34,7 +37,7 @@ public class playerController : MonoBehaviour
         gunStartPos = gunHolder.localPosition;
     }
     void Update()
-    {   if(uiController.instance.pauseScreen.activeInHierarchy == false){
+    {   if(uiController.instance.pauseScreen.activeInHierarchy == false && isGameEnded == false){
          //store y velocity 
         float yStore = moveInput.y;
         Vector3 verticalMove = transform.forward*Input.GetAxis("Vertical");
@@ -60,6 +63,10 @@ public class playerController : MonoBehaviour
         }
         
         canJump = Physics.OverlapSphere(groundCheckPoint.position,0.15f,groundLayer).Length>0;
+        //restart game when player falls off map 
+        if(transform.position.y < -50){
+            gameManager.instance.restartGame();
+        }
         //double jump
         if(canJump){
             canDblJump = false;
@@ -68,11 +75,18 @@ public class playerController : MonoBehaviour
         if(Input.GetKey(KeyCode.Space)&&canJump){
             moveInput.y = jumpPower; 
             canDblJump = true;
+            audioManager.instance.playSfx(15);
         }
         //handle double jump
         if(canDblJump && Input.GetKeyDown(KeyCode.Space)){
             moveInput.y = jumpPower;
             canDblJump = false;
+            audioManager.instance.playSfx(15);
+        }
+        if(bounce){
+            bounce = false;
+            moveInput.y = bounceStrength;
+            canDblJump = true;
         }
         //handle zoom;
         if(Input.GetMouseButtonDown(1)){
@@ -168,5 +182,9 @@ public class playerController : MonoBehaviour
                 }
             }
         }
+    }
+    public void playerBounce(float bouncePadStrength){
+        bounceStrength = bouncePadStrength;
+        bounce = true;
     }
 }

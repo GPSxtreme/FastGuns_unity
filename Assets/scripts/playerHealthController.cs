@@ -20,12 +20,14 @@ public class playerHealthController : MonoBehaviour
 
     }
     public void damagePlayer(float dmgAmount){
+        audioManager.instance.playSfx(14);
         currentHealth -= dmgAmount;
         updateHealthUi();
         uiController.instance.PlayerHit();
        
         if(currentHealth <= 0) 
         {
+            uiController.instance.healthText.text = "HEALTH: "+ 0 +"/"+ maxHealth;  
             gameObject.SetActive(false);
             gameManager.instance.restartGame();
             audioManager.instance.stopBgm();
